@@ -13,7 +13,7 @@ const Layout = () => {
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-posts/",
     element: <Layout />,
     children: [
       {
