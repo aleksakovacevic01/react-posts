@@ -1,29 +1,25 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  HashRouter,
+  Outlet,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
-
-const Layout = () => {
-  return (
-    <>
-      <Header />
-      <Outlet />
-    </>
-  );
-};
-
-const router = createBrowserRouter([
-  {
-    path: "/react-posts/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-    ],
-  },
-]);
+import Recipe from "./pages/Recipe";
 
 export const App = () => {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <>
+      <HashRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes/:id" element={<Recipe />} />
+        </Routes>
+      </HashRouter>
+    </>
+  );
 };
