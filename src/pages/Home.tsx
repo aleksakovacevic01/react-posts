@@ -1,16 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Pagination,
-  Typography,
-} from "@mui/material";
+import { Grid } from "@mui/material";
 import RecipesResponse from "../interfaces/Recipe";
 import RecipeCard from "../components/RecipeCard";
 

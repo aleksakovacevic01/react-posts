@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Card,
   CardActions,
@@ -8,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import RecipesResponse from "../interfaces/Recipe";
-import { Link } from "react-router-dom";
 
 interface RecipeCardProps {
   recipe: RecipesResponse;
