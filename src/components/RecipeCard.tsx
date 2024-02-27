@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import RecipesResponse from "../interfaces/Recipe";
+import Recipe from "../pages/Recipe";
+import { Link } from "react-router-dom";
 
 interface RecipeCardProps {
   recipe: RecipesResponse;
@@ -30,7 +32,9 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">
+          <Link to={`/recipes/${recipe.id}`}>Learn more</Link>
+        </Button>
       </CardActions>
     </Card>
   );
