@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import RecipesResponse from "../interfaces/Recipe";
-import Recipe from "../pages/Recipe";
 import { Link } from "react-router-dom";
 
 interface RecipeCardProps {

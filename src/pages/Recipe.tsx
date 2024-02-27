@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RecipesResponse from "../interfaces/Recipe";
 import axios from "axios";
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 const Recipe = () => {
   const { id } = useParams();
