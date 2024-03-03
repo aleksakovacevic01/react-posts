@@ -18,6 +18,9 @@ const Recipe = () => {
   return (
     <Grid container spacing={3}>
       <Grid item>
+        <Typography variant="h3" gutterBottom>
+          {recipe?.name}
+        </Typography>
         <Box
           component={"img"}
           src={recipe?.image}
@@ -25,9 +28,6 @@ const Recipe = () => {
           maxHeight={500}
           sx={{ borderRadius: 5, objectFit: "cover" }}
         />
-        <Typography variant="h3" gutterBottom>
-          {recipe?.name}
-        </Typography>
       </Grid>
       <Grid item>
         <Typography variant="h3" gutterBottom>
