@@ -19,11 +19,9 @@ const Home = () => {
     <>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {recipes.map((recipe) => (
-          <>
-            <Grid key={recipe.id} item xs={4}>
-              <RecipeCard recipe={recipe} />
-            </Grid>
-          </>
+          <Grid key={recipe.id} item xs={4}>
+            <RecipeCard recipe={recipe} />
+          </Grid>
         ))}
       </Grid>
     </>
