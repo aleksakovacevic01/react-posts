@@ -15,12 +15,14 @@ import RecipesResponse from "../interfaces/Recipe";
 import RecipeCard from "../components/RecipeCard";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Filter from "../components/Filter";
 
 const Home = () => {
   const [recipes, setRecipes] = useState<RecipesResponse[]>([]);
   const [total, setTotal] = useState<number>(0);
   const [pageSize, setPageSize] = useState<number>(6);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [difficulty, setDifficulty] = useState("");
 
   const currentPage: number = parseInt(
     searchParams.get("page") ? searchParams.get("page")! : "1"
@@ -50,12 +52,15 @@ const Home = () => {
 
   return (
     <>
+      <Filter setDifficulty={setDifficulty} difficulty={difficulty} />
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {recipes.map((recipe) => (
-          <Grid key={recipe.id} item xs={4}>
-            <RecipeCard recipe={recipe} />
-          </Grid>
-        ))}
+        {recipes.map((recipe) => {
+          return (
+            <Grid key={recipe.id} item xs={4}>
+              <RecipeCard recipe={recipe} />
+            </Grid>
+          );
+        })}
       </Grid>
       <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
         <Pagination
