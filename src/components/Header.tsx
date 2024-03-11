@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
-const pages = ["Home"];
+const pages = ["Home", "Products"];
 
 function Heder() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -119,13 +119,18 @@ function Heder() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <Link
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                to={page == "Home" ? "/" : "products"}
+                style={{ color: "white", textDecoration: "none" }}
               >
-                <Link to={"/"}>{page}</Link>
-              </Button>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 
