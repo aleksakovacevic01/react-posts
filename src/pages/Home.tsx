@@ -56,7 +56,7 @@ const Home = () => {
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {recipes.map((recipe) => {
           return (
-            <Grid key={recipe.id} item xs={4}>
+            <Grid key={recipe.id} item md={4} xs={12}>
               <RecipeCard recipe={recipe} />
             </Grid>
           );
